@@ -2,7 +2,7 @@
     "harmony_lits": {
         "id": "harmony_lits",
         "name": "Harmony vs LITs CMOS",
-        "description": "Harmony 和 LITs 中文音频成对盲测比较",
+        "description": "中英混语音频成对盲测比较，重点评估英文发音是否自然标准",
         "system_a_label": "Harmony",
         "system_b_label": "LITs",
         "languages": [

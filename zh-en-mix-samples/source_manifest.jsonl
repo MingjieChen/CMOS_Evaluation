@@ -1,0 +1,100 @@
+{"case_id": "zh_en_mixed_diverse_001", "scene": "airport_gate", "category": "出行住宿", "text": "登机口换到gate C18，我先去旁边的charging station等你。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_002", "scene": "hotel_lobby", "category": "出行住宿", "text": "酒店lobby的coffee machine坏了，reception给了两张drink voucher。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_003", "scene": "metro_transfer", "category": "出行住宿", "text": "地铁transfer通道临时封闭，staff让我们从exit B绕过去。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_004", "scene": "road_service", "category": "出行住宿", "text": "高速service area只剩slow charger，battery要多等二十分钟。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_005", "scene": "train_notice", "category": "出行住宿", "text": "车站announcement说platform change，ticket上原来的站台别看了。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_006", "scene": "bike_app", "category": "出行住宿", "text": "租车app提示unlock failed，可能是Bluetooth permission没开。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_007", "scene": "taxi_route", "category": "出行住宿", "text": "司机走了river tunnel，导航显示arrival time反而提前了。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_008", "scene": "visa_window", "category": "出行住宿", "text": "签证窗口要看hotel booking和return flight，材料别放行李箱。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_009", "scene": "bus_card", "category": "出行住宿", "text": "公交card balance不足，旁边kiosk可以直接top up。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_010", "scene": "ferry_trip", "category": "出行住宿", "text": "去小岛的ferry schedule改了，last boat提前到六点。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_011", "scene": "brunch_menu", "category": "饮食购物", "text": "这家brunch的avocado toast不错，但bacon有点太咸。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_012", "scene": "coffee_order", "category": "饮食购物", "text": "我点了oat latte少冰，barista在杯套上写错名字。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_013", "scene": "bakery_box", "category": "饮食购物", "text": "bakery只剩almond croissant，我给你留了一个。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_014", "scene": "grocery_scan", "category": "饮食购物", "text": "自助checkout扫不出barcode，staff手动输入了price code。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_015", "scene": "food_label", "category": "饮食购物", "text": "这瓶sparkling water是lime flavor，不是plain soda。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_016", "scene": "coupon_day", "category": "饮食购物", "text": "这个coupon只在weekday lunch可用，dinner不能减。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_017", "scene": "takeaway_soup", "category": "饮食购物", "text": "外卖soup lid没扣紧，delivery bag里洒了一点。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_018", "scene": "market_cheese", "category": "饮食购物", "text": "进口cheese在cold shelf最上层，旁边有sample tray。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_019", "scene": "dessert_note", "category": "饮食购物", "text": "生日cake message写中文就好，别加英文happy birthday。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_020", "scene": "recipe_step", "category": "饮食购物", "text": "recipe说先marinate二十分钟，不然chicken不入味。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_021", "scene": "design_asset", "category": "办公协作", "text": "designer把banner asset传到Figma，但export size需要改。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_022", "scene": "sales_update", "category": "办公协作", "text": "sales forecast刚更新，pipeline里新增三个enterprise lead。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_023", "scene": "legal_redline", "category": "办公协作", "text": "legal redline版本别覆盖，contract folder里有final draft。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_024", "scene": "hr_badge", "category": "办公协作", "text": "HR说badge printer卡纸，新员工先用visitor pass。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_025", "scene": "finance_invoice", "category": "办公协作", "text": "finance要求invoice title和tax number完全一致。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_026", "scene": "retro_board", "category": "办公协作", "text": "retro board上最多写三个action item，不然没人跟进。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_027", "scene": "customer_demo", "category": "办公协作", "text": "customer demo前先清空test account里的旧数据。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_028", "scene": "project_scope", "category": "办公协作", "text": "project scope变更要写进change request，不要只发chat。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_029", "scene": "vendor_call", "category": "办公协作", "text": "vendor call推迟半小时，因为Singapore team还在开会。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_030", "scene": "office_move", "category": "办公协作", "text": "office move那天monitor cable自己收好，IT不负责打包。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_031", "scene": "router_admin", "category": "技术设备", "text": "router admin页面进不去，reset pin要按十秒。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_032", "scene": "laptop_fan", "category": "技术设备", "text": "laptop fan突然很响，Activity Monitor显示indexing占用高。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_033", "scene": "cloud_backup", "category": "技术设备", "text": "cloud backup昨晚失败，因为home folder里有large video。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_034", "scene": "camera_card", "category": "技术设备", "text": "camera SD card需要format，否则recording会自动停止。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_035", "scene": "printer_driver", "category": "技术设备", "text": "printer driver升级后，duplex printing选项藏到advanced里。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_036", "scene": "smart_lock", "category": "技术设备", "text": "smart lock低电量提醒出现了，battery cover要从侧面推开。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_037", "scene": "tablet_keyboard", "category": "技术设备", "text": "tablet keyboard连接稳定，但trackpad gesture有点灵敏。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_038", "scene": "game_console", "category": "技术设备", "text": "game console update完成后，controller firmware也要升级。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_039", "scene": "earbuds_case", "category": "技术设备", "text": "earbuds case还有电，右耳却显示not charging。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_040", "scene": "nas_share", "category": "技术设备", "text": "NAS share权限改成read only，guest account不能上传。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_041", "scene": "clinic_form", "category": "健康运动", "text": "clinic form要填allergy history，空着会被护士退回。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_042", "scene": "fitness_plan", "category": "健康运动", "text": "今天fitness plan只练mobility，不做heavy squat。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_043", "scene": "yoga_mat", "category": "健康运动", "text": "yoga mat放在studio后排，class结束别忘带走。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_044", "scene": "running_goal", "category": "健康运动", "text": "running app把goal设成五公里，pace提醒关掉。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_045", "scene": "meal_log", "category": "健康运动", "text": "meal log里蛋白质不够，trainer建议加Greek yogurt。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_046", "scene": "sleep_alarm", "category": "健康运动", "text": "sleep alarm调到gentle mode，别用特别刺耳的tone。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_047", "scene": "pharmacy_pickup", "category": "健康运动", "text": "pharmacy pickup需要order number，医保卡也带上。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_048", "scene": "swim_lesson", "category": "健康运动", "text": "swim lesson改到indoor pool，locker key在前台领。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_049", "scene": "hiking_pack", "category": "健康运动", "text": "hiking pack里放rain jacket，山上forecast不稳定。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_050", "scene": "checkup_report", "category": "健康运动", "text": "checkup report周五出，doctor会先发PDF copy。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_051", "scene": "cinema_seat", "category": "娱乐内容", "text": "cinema seat选middle row吧，front row脖子太累。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_052", "scene": "concert_merch", "category": "娱乐内容", "text": "concert merch摊位只收card，cash queue反而更慢。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_053", "scene": "podcast_guest", "category": "娱乐内容", "text": "podcast guest讲AI ethics，那一段特别值得重听。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_054", "scene": "stream_series", "category": "娱乐内容", "text": "这部streaming series前两集铺垫慢，episode three开始好看。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_055", "scene": "photo_album", "category": "娱乐内容", "text": "photo album按location自动分类，但beach那组识别错了。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_056", "scene": "playlist_mood", "category": "娱乐内容", "text": "我做了一个focus playlist，里面没有vocal track。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_057", "scene": "board_game", "category": "娱乐内容", "text": "board game规则不难，但setup time差不多二十分钟。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_058", "scene": "art_ticket", "category": "娱乐内容", "text": "gallery ticket可以same day re-entry，手环别剪掉。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_059", "scene": "novel_chapter", "category": "娱乐内容", "text": "小说chapter ending停得太狠，我差点熬夜继续读。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_060", "scene": "karaoke_room", "category": "娱乐内容", "text": "karaoke room的microphone二号没电，换成backup mic。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_061", "scene": "parent_meeting", "category": "教育家庭", "text": "parent meeting改到online room，teacher会发Zoom link。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_062", "scene": "school_project", "category": "教育家庭", "text": "science project要做volcano model，vinegar和baking soda家里都有。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_063", "scene": "library_due", "category": "教育家庭", "text": "library book明天due，renew按钮今天还能点。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_064", "scene": "language_homework", "category": "教育家庭", "text": "language homework要录reading audio，不是写summary。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_065", "scene": "kids_camp", "category": "教育家庭", "text": "kids camp要求带sun hat、water bottle和name tag。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_066", "scene": "exam_login", "category": "教育家庭", "text": "exam portal登录要student ID，password区分大小写。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_067", "scene": "piano_practice", "category": "教育家庭", "text": "piano practice今天只练left hand，老师说节奏先稳。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_068", "scene": "family_album", "category": "教育家庭", "text": "family album里的old video格式太旧，需要converter。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_069", "scene": "grandma_call", "category": "教育家庭", "text": "grandma video call声音小，把speaker volume调高一点。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_070", "scene": "baby_monitor", "category": "教育家庭", "text": "baby monitor夜里掉线，nursery Wi-Fi信号太弱。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_071", "scene": "bank_otp", "category": "金融生活", "text": "bank OTP短信延迟了，transaction先不要重复提交。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_072", "scene": "rent_note", "category": "金融生活", "text": "rent transfer备注写unit 1206，landlord才好对账。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_073", "scene": "budget_app", "category": "金融生活", "text": "budget app把coffee归到dining，分类需要手动改。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_074", "scene": "insurance_file", "category": "金融生活", "text": "insurance claim上传medical report后，还缺bank statement。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_075", "scene": "refund_status", "category": "金融生活", "text": "refund status显示processing，客服说三到五个business days。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_076", "scene": "subscription_cancel", "category": "金融生活", "text": "subscription trial今晚到期，cancel button在settings最底部。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_077", "scene": "receipt_scan", "category": "金融生活", "text": "receipt scan边角没拍全，expense system不通过。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_078", "scene": "currency_rate", "category": "金融生活", "text": "currency rate今天波动大，先别换太多cash。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_079", "scene": "card_limit", "category": "金融生活", "text": "card limit临时提高后，online purchase终于成功。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_080", "scene": "savings_goal", "category": "金融生活", "text": "savings goal设成旅行基金，每月auto transfer五百。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_081", "scene": "laundry_mode", "category": "居家社区", "text": "洗衣机delicate mode时间太长，这件shirt还是手洗吧。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_082", "scene": "air_filter", "category": "居家社区", "text": "air purifier提醒replace filter，旧滤芯已经变灰。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_083", "scene": "repair_slot", "category": "居家社区", "text": "plumber预约到morning slot，八点到十二点之间上门。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_084", "scene": "parcel_room", "category": "居家社区", "text": "parcel room门禁坏了，courier把箱子放到front desk。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_085", "scene": "garden_light", "category": "居家社区", "text": "garden light定时器乱了，sunset后没有自动亮。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_086", "scene": "neighbor_shelf", "category": "居家社区", "text": "邻居借了tool kit装shelf，晚上就会还。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_087", "scene": "community_notice", "category": "居家社区", "text": "community notice说周六有fire drill，电梯暂停十分钟。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_088", "scene": "pet_clinic", "category": "居家社区", "text": "pet clinic提醒vaccine booster，预约在下周二。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_089", "scene": "plant_corner", "category": "居家社区", "text": "monstera新叶展开了，plant stand可以往窗边挪一点。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_090", "scene": "storage_box", "category": "居家社区", "text": "storage box贴label以后，冬天衣服终于好找了。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_091", "scene": "friend_message", "category": "提醒沟通", "text": "朋友发来voice message，说meetup地点换到bookstore。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_092", "scene": "calendar_block", "category": "提醒沟通", "text": "calendar block留给deep work，notification全部静音。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_093", "scene": "birthday_plan", "category": "提醒沟通", "text": "birthday plan别太正式，casual dinner加small gift就够。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_094", "scene": "wedding_shuttle", "category": "提醒沟通", "text": "wedding shuttle四点出发，late guest只能自己打车。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_095", "scene": "volunteer_shift", "category": "提醒沟通", "text": "volunteer shift从morning换到afternoon，coordinator已经确认。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_096", "scene": "package_return", "category": "提醒沟通", "text": "package return label要贴在外箱，不要盖住old barcode。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_097", "scene": "weather_plan", "category": "提醒沟通", "text": "weather app说有storm warning，picnic改到indoor cafe。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_098", "scene": "voice_memo", "category": "提醒沟通", "text": "voice memo里有背景噪音，transcript可能不准。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_099", "scene": "meeting_followup", "category": "提醒沟通", "text": "follow-up email别太长，三点bullet就够清楚。", "lang": "zh-en", "spk_id": 1}
+{"case_id": "zh_en_mixed_diverse_100", "scene": "quiet_mode", "category": "提醒沟通", "text": "今晚我开do not disturb mode，有急事直接call me。", "lang": "zh-en", "spk_id": 1}

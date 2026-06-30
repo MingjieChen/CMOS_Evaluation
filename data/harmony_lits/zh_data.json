@@ -1,92 +1,102 @@
 {
     "000": {
-        "case_id": "zh_daily_chitchat_001",
-        "text": "早啊，今天醒得还挺早，窗外阳光不错。",
-        "scene": "morning",
-        "category": "早晨问候",
-        "turn": 1,
-        "harmony_audio": "./harmony/zh_daily_chitchat_001.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_001.wav"
+        "case_id": "zh_en_mixed_diverse_002",
+        "text": "酒店lobby的coffee machine坏了，reception给了两张drink voucher。",
+        "scene": "hotel_lobby",
+        "category": "出行住宿",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_002.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_002.wav"
     },
     "001": {
-        "case_id": "zh_daily_chitchat_002",
-        "text": "我刚泡了一杯热茶，感觉整个人慢慢清醒了。",
-        "scene": "morning",
-        "category": "早晨问候",
-        "turn": 2,
-        "harmony_audio": "./harmony/zh_daily_chitchat_002.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_002.wav"
+        "case_id": "zh_en_mixed_diverse_003",
+        "text": "地铁transfer通道临时封闭，staff让我们从exit B绕过去。",
+        "scene": "metro_transfer",
+        "category": "出行住宿",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_003.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_003.wav"
     },
     "002": {
-        "case_id": "zh_daily_chitchat_007",
-        "text": "我本来想喝咖啡，结果闻到豆浆味又改主意了。",
-        "scene": "breakfast",
-        "category": "早餐闲聊",
-        "turn": 3,
-        "harmony_audio": "./harmony/zh_daily_chitchat_007.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_007.wav"
+        "case_id": "zh_en_mixed_diverse_005",
+        "text": "车站announcement说platform change，ticket上原来的站台别看了。",
+        "scene": "train_notice",
+        "category": "出行住宿",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_005.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_005.wav"
     },
     "003": {
-        "case_id": "zh_daily_chitchat_011",
-        "text": "公交车刚好到站，这种小幸运能开心半天。",
-        "scene": "commute",
-        "category": "通勤路上",
-        "turn": 3,
-        "harmony_audio": "./harmony/zh_daily_chitchat_011.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_011.wav"
+        "case_id": "zh_en_mixed_diverse_006",
+        "text": "租车app提示unlock failed，可能是Bluetooth permission没开。",
+        "scene": "bike_app",
+        "category": "出行住宿",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_006.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_006.wav"
     },
     "004": {
-        "case_id": "zh_daily_chitchat_012",
-        "text": "我在路上听了两首老歌，突然就不觉得堵车烦了。",
-        "scene": "commute",
-        "category": "通勤路上",
-        "turn": 4,
-        "harmony_audio": "./harmony/zh_daily_chitchat_012.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_012.wav"
+        "case_id": "zh_en_mixed_diverse_010",
+        "text": "去小岛的ferry schedule改了，last boat提前到六点。",
+        "scene": "ferry_trip",
+        "category": "出行住宿",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_010.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_010.wav"
     },
     "005": {
-        "case_id": "zh_daily_chitchat_016",
-        "text": "晚上如果降温，还是加件外套比较稳妥。",
-        "scene": "weather",
-        "category": "天气闲聊",
-        "turn": 4,
-        "harmony_audio": "./harmony/zh_daily_chitchat_016.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_016.wav"
+        "case_id": "zh_en_mixed_diverse_011",
+        "text": "这家brunch的avocado toast不错，但bacon有点太咸。",
+        "scene": "brunch_menu",
+        "category": "饮食购物",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_011.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_011.wav"
     },
     "006": {
-        "case_id": "zh_daily_chitchat_027",
-        "text": "我最近开始喝花茶，味道淡淡的，还挺放松。",
-        "scene": "coffee",
-        "category": "咖啡茶饮",
-        "turn": 3,
-        "harmony_audio": "./harmony/zh_daily_chitchat_027.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_027.wav"
+        "case_id": "zh_en_mixed_diverse_015",
+        "text": "这瓶sparkling water是lime flavor，不是plain soda。",
+        "scene": "food_label",
+        "category": "饮食购物",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_015.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_015.wav"
     },
     "007": {
-        "case_id": "zh_daily_chitchat_031",
-        "text": "家里小朋友学会了新词，一整天都在重复。",
-        "scene": "family",
-        "category": "家人闲谈",
-        "turn": 3,
-        "harmony_audio": "./harmony/zh_daily_chitchat_031.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_031.wav"
+        "case_id": "zh_en_mixed_diverse_016",
+        "text": "这个coupon只在weekday lunch可用，dinner不能减。",
+        "scene": "coupon_day",
+        "category": "饮食购物",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_016.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_016.wav"
     },
     "008": {
-        "case_id": "zh_daily_chitchat_034",
-        "text": "超市今天做活动，结果我又买多了。",
-        "scene": "shopping",
-        "category": "买东西",
-        "turn": 2,
-        "harmony_audio": "./harmony/zh_daily_chitchat_034.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_034.wav"
+        "case_id": "zh_en_mixed_diverse_017",
+        "text": "外卖soup lid没扣紧，delivery bag里洒了一点。",
+        "scene": "takeaway_soup",
+        "category": "饮食购物",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_017.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_017.wav"
     },
     "009": {
-        "case_id": "zh_daily_chitchat_039",
-        "text": "我切菜速度不快，但做饭这个过程还挺治愈。",
-        "scene": "cooking",
-        "category": "做饭闲聊",
-        "turn": 3,
-        "harmony_audio": "./harmony/zh_daily_chitchat_039.wav",
-        "lits_audio": "./lits/zh_daily_chitchat_039.wav"
+        "case_id": "zh_en_mixed_diverse_018",
+        "text": "进口cheese在cold shelf最上层，旁边有sample tray。",
+        "scene": "market_cheese",
+        "category": "饮食购物",
+        "lang": "zh-en",
+        "spk_id": 1,
+        "harmony_audio": "./zh-en-mix-samples/harmony/zh_en_mixed_diverse_018.wav",
+        "lits_audio": "./zh-en-mix-samples/lits/zh_en_mixed_diverse_018.wav"
     }
 }
