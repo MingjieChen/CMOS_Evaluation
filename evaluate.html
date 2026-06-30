@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMOS Evaluation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .score-btn { transition: all 0.15s; border: 1px solid #e5e7eb; background: white; text-align: center; }
+        .score-btn:hover:not(:disabled) { border-color: #93c5fd; background: #f8fafc; }
+        .score-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+        .active-score { background-color: #2563eb !important; color: white !important; border-color: #1d4ed8 !important; }
+        .score-desc { color: #6b7280; font-size: 0.8rem; line-height: 1.35; margin-top: 0.25rem; }
+        .active-score .score-desc { color: #dbeafe !important; }
+        #loading { display: flex; }
+        #main-app { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+    <div id="loading" class="flex-col items-center justify-center min-h-screen">
+        <p class="text-gray-500 text-lg">加载评估数据...</p>
+    </div>
+
+    <div id="main-app" class="max-w-5xl mx-auto py-8 px-4">
+        <div class="bg-white shadow-xl rounded-2xl p-6 md:p-8">
+            <div class="flex flex-wrap justify-between items-center border-b pb-6 mb-8 gap-4">
+                <div>
+                    <a id="back-link" href="#" class="text-sm text-gray-400 hover:text-blue-600 block mb-1">← 返回</a>
+                    <h2 id="page-title" class="text-xl font-bold text-gray-800"></h2>
+                    <p id="compare-hint" class="text-xs text-gray-400 mt-1">请先完整听完 A 和 B，再判断哪段音频更好。</p>
+                </div>
+                <div id="progress" class="text-lg font-mono font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-lg">0 / 0</div>
+            </div>
+
+            <div class="space-y-8">
+                <section class="bg-blue-50 text-blue-900 rounded-2xl p-4 text-sm leading-relaxed">
+                    <h3 class="font-bold mb-2">评测维度</h3>
+                    <p>请重点比较两段音频的自然度、韵律拟人度，以及是否没有明显播音腔。</p>
+                </section>
+
+                <section>
+                    <h3 class="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">Text Content</h3>
+                    <div id="text-content" class="p-5 bg-slate-50 rounded-xl text-gray-700 leading-relaxed border-l-4 border-blue-500 text-lg italic"></div>
+                </section>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="space-y-4 bg-slate-50 p-4 rounded-xl border border-gray-100">
+                        <label class="text-sm font-bold text-gray-600 flex items-center">
+                            <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-2 text-xs">A</span>
+                            Audio A
+                            <span id="heard-a" class="ml-2 text-xs text-gray-400">未听完</span>
+                        </label>
+                        <audio id="audio-a" controls class="w-full"></audio>
+                    </div>
+                    <div class="space-y-4 bg-slate-50 p-4 rounded-xl border border-gray-100">
+                        <label class="text-sm font-bold text-gray-600 flex items-center">
+                            <span class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mr-2 text-xs">B</span>
+                            Audio B
+                            <span id="heard-b" class="ml-2 text-xs text-gray-400">未听完</span>
+                        </label>
+                        <audio id="audio-b" controls class="w-full"></audio>
+                    </div>
+                </div>
+
+                <section class="space-y-4">
+                    <div class="text-center">
+                        <h3 class="text-base font-bold text-gray-800">Audio A 和 Audio B 相比，哪个更好？</h3>
+                        <p id="score-lock-hint" class="text-sm text-amber-600 mt-1">请先听完两段音频再打分</p>
+                    </div>
+                    <div id="score-options" class="grid grid-cols-1 md:grid-cols-5 gap-3"></div>
+                </section>
+
+                <p id="item-status" class="text-center text-sm text-gray-400"></p>
+
+                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                    <button onclick="prevItem()" class="px-8 py-3 text-gray-400 hover:text-blue-600 font-bold transition">← PREV</button>
+                    <button onclick="nextItem()" class="px-8 py-3 bg-gray-100 text-gray-600 rounded-xl hover:bg-gray-200 transition font-bold">NEXT →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 flex flex-col items-center pb-20">
+            <button onclick="downloadResults()" class="bg-black text-white px-12 py-4 rounded-2xl font-bold hover:scale-105 transition shadow-xl active:scale-95">
+                Download Evaluation Result (JSON)
+            </button>
+        </div>
+    </div>
+
+    <script src="./data/evaluation-data.js"></script>
+    <script>
+        const SCORE_OPTIONS = [
+            { val: 2, label: '2', desc: 'A 更好' },
+            { val: 1, label: '1', desc: 'A 稍微更好' },
+            { val: 0, label: '0', desc: '没区别' },
+            { val: -1, label: '-1', desc: 'B 稍微更好' },
+            { val: -2, label: '-2', desc: 'B 更好' },
+        ];
+
+        const params = new URLSearchParams(location.search);
+        const modelId = params.get('model') || 'harmony_lits';
+        const lang = params.get('lang') || 'zh';
+
+        let modelConfig = {};
+        let rawData = {};
+        let keys = [];
+        let currentIndex = 0;
+        let results = {};
+        let mappings = {};
+        let heard = { a: false, b: false };
+
+        function fail(msg) {
+            document.getElementById('loading').innerHTML =
+                `<p class="text-red-500 text-center px-4">${msg}</p>`;
+        }
+
+        function nowCST() {
+            const d = new Date();
+            const utc = d.getTime() + d.getTimezoneOffset() * 60000;
+            const nd = new Date(utc + 3600000 * 8);
+            const pad = (n) => String(n).padStart(2, '0');
+            return `${nd.getFullYear()}-${pad(nd.getMonth() + 1)}-${pad(nd.getDate())} ${pad(nd.getHours())}:${pad(nd.getMinutes())}:${pad(nd.getSeconds())}`;
+        }
+
+        function buildScoreOptions() {
+            const container = document.getElementById('score-options');
+            container.innerHTML = SCORE_OPTIONS.map(opt => `
+                <button type="button"
+                    class="score-btn p-4 rounded-xl text-sm"
+                    data-val="${opt.val}"
+                    onclick="setComparisonScore(${opt.val})"
+                    disabled>
+                    <span class="font-black text-lg">${opt.label}</span>
+                    <div class="score-desc">${opt.desc}</div>
+                </button>
+            `).join('');
+        }
+
+        function shuffleArray(values) {
+            const shuffled = [...values];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        async function loadEvaluationData() {
+            const embeddedModels = window.CMOS_MODELS;
+            const embeddedData = window.CMOS_DATA?.[modelId]?.[lang];
+            if (embeddedModels && embeddedData) {
+                return { models: embeddedModels, data: embeddedData };
+            }
+
+            const [modelsRes, dataRes] = await Promise.all([
+                fetch('./config/models.json'),
+                fetch(`./data/${modelId}/${lang}_data.json`)
+            ]);
+
+            if (!modelsRes.ok) throw new Error('无法加载 config/models.json');
+            if (!dataRes.ok) throw new Error(`无法加载 data/${modelId}/${lang}_data.json`);
+
+            return {
+                models: await modelsRes.json(),
+                data: await dataRes.json()
+            };
+        }
+
+        function isItemComplete(id) {
+            return results[id]?.comparison_score != null;
+        }
+
+        function canScoreCurrent() {
+            const id = keys[currentIndex];
+            return heard.a && heard.b || isItemComplete(id);
+        }
+
+        function systemForAudio(audioName, isHarmonyA) {
+            if (audioName === 'a') return isHarmonyA ? 'harmony' : 'lits';
+            return isHarmonyA ? 'lits' : 'harmony';
+        }
+
+        function preferredSystem(score, mapping) {
+            if (score === 0) return 'tie';
+            const winnerAudio = score > 0 ? 'a' : 'b';
+            return systemForAudio(winnerAudio, mapping.isHarmonyA);
+        }
+
+        function buildRating(id) {
+            const mapping = mappings[id];
+            const score = results[id]?.comparison_score;
+            const audioASystem = systemForAudio('a', mapping.isHarmonyA);
+            const audioBSystem = systemForAudio('b', mapping.isHarmonyA);
+            return {
+                comparison_score: score,
+                scale: '2=A更好, 1=A稍微更好, 0=没区别, -1=B稍微更好, -2=B更好',
+                audio_a_system: audioASystem,
+                audio_b_system: audioBSystem,
+                audio_a_path: mapping.audioAPath,
+                audio_b_path: mapping.audioBPath,
+                preferred_system: preferredSystem(score, mapping),
+                lits_vs_harmony_score: audioASystem === 'lits' ? score : -score,
+                is_harmony_a: mapping.isHarmonyA,
+                timestamp: nowCST()
+            };
+        }
+
+        async function init() {
+            buildScoreOptions();
+
+            const { models, data } = await loadEvaluationData();
+            modelConfig = models[modelId];
+            if (!modelConfig) { fail(`未知模型: ${modelId}`); return; }
+
+            rawData = data;
+            keys = shuffleArray(Object.keys(rawData).sort((a, b) => Number(a) - Number(b)));
+            if (keys.length === 0) { fail('JSON 中没有评估条目'); return; }
+
+            document.title = 'CMOS 音频评测';
+            document.getElementById('page-title').textContent = 'CMOS 音频评测';
+            document.getElementById('back-link').href = 'index.html';
+
+            document.getElementById('audio-a').addEventListener('ended', () => markHeard('a'));
+            document.getElementById('audio-b').addEventListener('ended', () => markHeard('b'));
+
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('main-app').style.display = 'block';
+            renderCurrent();
+        }
+
+        function ensureMapping(id, item) {
+            if (!mappings[id]) {
+                const isHarmonyA = Math.random() > 0.5;
+                mappings[id] = {
+                    isHarmonyA,
+                    audioAPath: isHarmonyA ? item.harmony_audio : item.lits_audio,
+                    audioBPath: isHarmonyA ? item.lits_audio : item.harmony_audio,
+                };
+            }
+            return mappings[id];
+        }
+
+        function renderCurrent() {
+            const id = keys[currentIndex];
+            const item = rawData[id];
+            const mapping = ensureMapping(id, item);
+            heard = { a: false, b: false };
+
+            document.getElementById('progress').innerText = `${currentIndex + 1} / ${keys.length}`;
+            document.getElementById('text-content').innerText = item.text;
+
+            const audioA = document.getElementById('audio-a');
+            const audioB = document.getElementById('audio-b');
+            audioA.src = mapping.audioAPath;
+            audioB.src = mapping.audioBPath;
+            audioA.load();
+            audioB.load();
+
+            updateScoreState();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function markHeard(audioName) {
+            heard[audioName] = true;
+            updateScoreState();
+        }
+
+        function updateScoreState() {
+            const id = keys[currentIndex];
+            const completed = isItemComplete(id);
+            const canScore = canScoreCurrent();
+            document.getElementById('heard-a').textContent = heard.a || completed ? '已听完' : '未听完';
+            document.getElementById('heard-a').className = `ml-2 text-xs ${heard.a || completed ? 'text-emerald-600' : 'text-gray-400'}`;
+            document.getElementById('heard-b').textContent = heard.b || completed ? '已听完' : '未听完';
+            document.getElementById('heard-b').className = `ml-2 text-xs ${heard.b || completed ? 'text-emerald-600' : 'text-gray-400'}`;
+
+            document.querySelectorAll('.score-btn').forEach(button => {
+                button.disabled = !canScore;
+                button.classList.remove('active-score');
+            });
+
+            const score = results[id]?.comparison_score;
+            if (score != null) {
+                document.querySelector(`[data-val="${score}"]`)?.classList.add('active-score');
+            }
+
+            const lockHint = document.getElementById('score-lock-hint');
+            lockHint.textContent = canScore ? '请选择一个比较结果' : '请先听完两段音频再打分';
+            lockHint.className = `text-sm mt-1 ${canScore ? 'text-gray-500' : 'text-amber-600'}`;
+
+            const status = document.getElementById('item-status');
+            if (completed) {
+                status.textContent = '本条已完成 · 0.8 秒后自动下一条';
+                status.className = 'text-center text-sm text-emerald-600 font-medium';
+            } else {
+                status.textContent = canScore ? '可以打分' : '请完整听完 Audio A 和 Audio B';
+                status.className = `text-center text-sm ${canScore ? 'text-blue-600' : 'text-gray-400'}`;
+            }
+        }
+
+        function setComparisonScore(val) {
+            if (!canScoreCurrent()) return;
+            const id = keys[currentIndex];
+            results[id] = { comparison_score: val };
+            results[id] = { ...results[id], ...buildRating(id) };
+            updateScoreState();
+            setTimeout(nextItem, 800);
+        }
+
+        function nextItem() {
+            if (currentIndex < keys.length - 1) {
+                currentIndex++;
+                renderCurrent();
+            }
+        }
+
+        function prevItem() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderCurrent();
+            }
+        }
+
+        window.addEventListener('beforeunload', function (e) {
+            const complete = keys.filter(isItemComplete).length;
+            if (complete > 0 && complete < keys.length) {
+                e.preventDefault();
+                e.returnValue = '你还有未完成的评估，确定要离开吗？';
+            }
+        });
+
+        function downloadResults() {
+            const incomplete = keys.filter(k => !isItemComplete(k));
+            if (incomplete.length > 0) {
+                const msg = `警告：您还有 ${incomplete.length} 条样本未完成评估！\n\n未完成条目：[ ${formatRange(incomplete)} ]\n\n继续下载将导致这些数据缺失（标为 unrated）。是否确认继续？`;
+                if (!confirm(msg)) return;
+            }
+
+            const finalData = {};
+            keys.forEach(k => {
+                finalData[k] = {
+                    ...rawData[k],
+                    rating: isItemComplete(k) ? buildRating(k) : 'unrated'
+                };
+            });
+
+            const meta = {
+                scoring_scheme: 'cmos_ab_preference_-2_to_2',
+                score_meaning: '2=A更好, 1=A稍微更好, 0=没区别, -1=B稍微更好, -2=B更好',
+                evaluation: 'anonymous_cmos',
+                language: lang,
+                exported_at: nowCST(),
+                total: keys.length,
+                rated: keys.filter(isItemComplete).length
+            };
+
+            const blob = new Blob([JSON.stringify({ meta, items: finalData }, null, 4)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `cmos_result_${lang}_${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function formatRange(arr) {
+            if (arr.length === 0) return '';
+            const nums = arr.map(Number).sort((a, b) => a - b);
+            const ranges = [];
+            let start = nums[0];
+            let end = nums[0];
+            const fmt = (n) => String(n).padStart(3, '0');
+
+            for (let i = 1; i <= nums.length; i++) {
+                if (i < nums.length && nums[i] === end + 1) {
+                    end = nums[i];
+                } else {
+                    ranges.push(start === end ? fmt(start) : `${fmt(start)}-${fmt(end)}`);
+                    if (i < nums.length) start = end = nums[i];
+                }
+            }
+            return ranges.join(', ');
+        }
+
+        init().catch(err => {
+            console.error(err);
+            fail(err.message);
+        });
+    </script>
+</body>
+</html>

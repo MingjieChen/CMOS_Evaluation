@@ -1,0 +1,12 @@
+{
+    "harmony_lits": {
+        "id": "harmony_lits",
+        "name": "Harmony vs LITs CMOS",
+        "description": "Harmony 和 LITs 中文音频成对盲测比较",
+        "system_a_label": "Harmony",
+        "system_b_label": "LITs",
+        "languages": [
+            "zh"
+        ]
+    }
+}

@@ -1,0 +1,109 @@
+window.CMOS_MODELS = {
+    "harmony_lits": {
+        "id": "harmony_lits",
+        "name": "Harmony vs LITs CMOS",
+        "description": "Harmony 和 LITs 中文音频成对盲测比较",
+        "system_a_label": "Harmony",
+        "system_b_label": "LITs",
+        "languages": [
+            "zh"
+        ]
+    }
+};
+
+window.CMOS_DATA = {
+    harmony_lits: {
+        zh: {
+        "000": {
+                "case_id": "zh_daily_chitchat_001",
+                "text": "早啊，今天醒得还挺早，窗外阳光不错。",
+                "scene": "morning",
+                "category": "早晨问候",
+                "turn": 1,
+                "harmony_audio": "./harmony/zh_daily_chitchat_001.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_001.wav"
+        },
+        "001": {
+                "case_id": "zh_daily_chitchat_002",
+                "text": "我刚泡了一杯热茶，感觉整个人慢慢清醒了。",
+                "scene": "morning",
+                "category": "早晨问候",
+                "turn": 2,
+                "harmony_audio": "./harmony/zh_daily_chitchat_002.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_002.wav"
+        },
+        "002": {
+                "case_id": "zh_daily_chitchat_007",
+                "text": "我本来想喝咖啡，结果闻到豆浆味又改主意了。",
+                "scene": "breakfast",
+                "category": "早餐闲聊",
+                "turn": 3,
+                "harmony_audio": "./harmony/zh_daily_chitchat_007.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_007.wav"
+        },
+        "003": {
+                "case_id": "zh_daily_chitchat_011",
+                "text": "公交车刚好到站，这种小幸运能开心半天。",
+                "scene": "commute",
+                "category": "通勤路上",
+                "turn": 3,
+                "harmony_audio": "./harmony/zh_daily_chitchat_011.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_011.wav"
+        },
+        "004": {
+                "case_id": "zh_daily_chitchat_012",
+                "text": "我在路上听了两首老歌，突然就不觉得堵车烦了。",
+                "scene": "commute",
+                "category": "通勤路上",
+                "turn": 4,
+                "harmony_audio": "./harmony/zh_daily_chitchat_012.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_012.wav"
+        },
+        "005": {
+                "case_id": "zh_daily_chitchat_016",
+                "text": "晚上如果降温，还是加件外套比较稳妥。",
+                "scene": "weather",
+                "category": "天气闲聊",
+                "turn": 4,
+                "harmony_audio": "./harmony/zh_daily_chitchat_016.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_016.wav"
+        },
+        "006": {
+                "case_id": "zh_daily_chitchat_027",
+                "text": "我最近开始喝花茶，味道淡淡的，还挺放松。",
+                "scene": "coffee",
+                "category": "咖啡茶饮",
+                "turn": 3,
+                "harmony_audio": "./harmony/zh_daily_chitchat_027.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_027.wav"
+        },
+        "007": {
+                "case_id": "zh_daily_chitchat_031",
+                "text": "家里小朋友学会了新词，一整天都在重复。",
+                "scene": "family",
+                "category": "家人闲谈",
+                "turn": 3,
+                "harmony_audio": "./harmony/zh_daily_chitchat_031.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_031.wav"
+        },
+        "008": {
+                "case_id": "zh_daily_chitchat_034",
+                "text": "超市今天做活动，结果我又买多了。",
+                "scene": "shopping",
+                "category": "买东西",
+                "turn": 2,
+                "harmony_audio": "./harmony/zh_daily_chitchat_034.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_034.wav"
+        },
+        "009": {
+                "case_id": "zh_daily_chitchat_039",
+                "text": "我切菜速度不快，但做饭这个过程还挺治愈。",
+                "scene": "cooking",
+                "category": "做饭闲聊",
+                "turn": 3,
+                "harmony_audio": "./harmony/zh_daily_chitchat_039.wav",
+                "lits_audio": "./lits/zh_daily_chitchat_039.wav"
+        }
+}
+    }
+};
